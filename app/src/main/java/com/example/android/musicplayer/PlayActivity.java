@@ -1,8 +1,9 @@
 package com.example.android.musicplayer;
 
-import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.NavUtils;
 import android.support.v7.app.AppCompatActivity;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
@@ -20,7 +21,6 @@ public class PlayActivity extends AppCompatActivity {
     ImageButton play;
     ImageButton prev;
     ImageButton next;
-    ImageButton back;
 
     int position;
 
@@ -29,8 +29,11 @@ public class PlayActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.play_layout);
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         isPlaying = true;
 
@@ -41,7 +44,6 @@ public class PlayActivity extends AppCompatActivity {
         play = findViewById(R.id.play);
         prev = findViewById(R.id.prev);
         next = findViewById(R.id.next);
-        back = findViewById(R.id.back);
 
         play.setImageResource(R.drawable.ic_pause_circle_filled_black_24dp);
 
@@ -63,7 +65,6 @@ public class PlayActivity extends AppCompatActivity {
             }
         });
 
-
         prev.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -81,14 +82,17 @@ public class PlayActivity extends AppCompatActivity {
                 setInfo(position);
             }
         });
+    }
 
-        back.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(PlayActivity.this, SongActivity.class);
-                startActivity(intent);
-            }
-        });
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            // Respond to the action bar's Up/Home button
+            case android.R.id.home:
+                NavUtils.navigateUpFromSameTask(this);
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     public void setInfo(int position) {

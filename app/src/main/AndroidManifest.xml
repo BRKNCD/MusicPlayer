@@ -17,9 +17,14 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".PlayActivity"></activity>
-        <activity android:name=".ArtistActivity"></activity>
-        <activity android:name=".SongActivity"></activity>
+        <activity
+            android:name=".PlayActivity"
+            android:label="@string/play_activity_name"
+            android:parentActivityName=".SongActivity"></activity>
+        <activity
+            android:name=".SongActivity"
+            android:label="@string/song_activity_name"
+            android:parentActivityName=".MainActivity" />
     </application>
 
 </manifest>

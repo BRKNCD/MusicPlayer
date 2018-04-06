@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">MusicPlayer</string>
     <string name="playMe">Play Me</string>
+    <string name="main_activity_name">Music Player</string>
     <string name="play_activity_name">Playing</string>
     <string name="song_activity_name">Songs</string>
 </resources>

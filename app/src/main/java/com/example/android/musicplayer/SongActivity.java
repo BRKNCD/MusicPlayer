@@ -12,10 +12,6 @@ import android.widget.ListView;
 
 import java.util.ArrayList;
 
-/**
- * Created by Gian on 04/04/2018.
- */
-
 public class SongActivity extends AppCompatActivity{
 
     @Override
@@ -24,7 +20,6 @@ public class SongActivity extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.song_main);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
 
         SongList songList = new SongList();
         final ArrayList<Song> song = songList.songList();
@@ -37,7 +32,6 @@ public class SongActivity extends AppCompatActivity{
 
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
                 Intent intent = new Intent(SongActivity.this, PlayActivity.class);
                 intent.putExtra("POSITION", position);
                 startActivity(intent);

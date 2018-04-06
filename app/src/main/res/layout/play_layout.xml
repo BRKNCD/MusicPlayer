@@ -12,7 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingBottom="16dp"
-        android:src="@drawable/vinyl" />
+        android:src="@drawable/ic_vinyl" />
 
     <TextView
         android:id="@+id/artist_text_view"

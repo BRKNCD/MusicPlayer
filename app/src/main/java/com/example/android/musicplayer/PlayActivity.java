@@ -45,7 +45,7 @@ public class PlayActivity extends AppCompatActivity {
         prev = findViewById(R.id.prev);
         next = findViewById(R.id.next);
 
-        play.setImageResource(R.drawable.ic_pause_circle_filled_black_24dp);
+        play.setImageResource(R.drawable.ic_pause_circle_filled);
 
         Bundle extras = getIntent().getExtras();
 
@@ -58,9 +58,9 @@ public class PlayActivity extends AppCompatActivity {
             public void onClick(View v) {
                 isPlaying = !isPlaying;
                 if (isPlaying) {
-                    play.setImageResource(R.drawable.ic_pause_circle_filled_black_24dp);
+                    play.setImageResource(R.drawable.ic_pause_circle_filled);
                 } else {
-                    play.setImageResource(R.drawable.ic_play_circle_filled_black_24dp);
+                    play.setImageResource(R.drawable.ic_play_circle_filled);
                 }
             }
         });
